@@ -7,10 +7,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="HandheldFriendly" content="True">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="description" content="App Landing Page">
-    <meta name="keywords"
-        content="app, app landing, clean, landing, landing page, marketing, marketing landing, product, product landing, responsive, seo, startup landing ">
-    <meta name="author" content="App Landing Page">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Jakub Lipiński">
     <title>Agencja Digitalowa.pl – Sprawdź naszą ofertę marketingu audiowizualnego.</title>
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i%7COswald:400,700"
@@ -22,13 +21,11 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/plugins.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/colors.css') }} ">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    <style class="color_css"></style>
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-
-    <!-- Scripts -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
 
@@ -91,7 +88,11 @@
         <main id="main">
             <!-- Hero area of the page -->
             <section class="hero-area text-center overlay" data-scroll-index="0">
-                <div id="bgvid"></div>
+                <!-- <div id="bgvid">
+                    <video autoplay muted loop id="myVideo">
+                        <source src="{{ asset('video/polina.mp4') }}" type="video/mp4">
+                    </video>
+                </div> -->
                 <div id="polina">
                     <div class="container">
                         <div class="row">
@@ -204,7 +205,7 @@
                 <ul class="features-list">
                     <li>
                         <div class="icon-holder">
-                            <img src="images/wywiady.png" class="img-responsive">
+                            <img src="{{ asset('img/wywiady.png') }}" class="img-responsive">
                         </div>
                         <h3><a href="#contact">Wywiady</a></h3>
                         <p>Przeprowadzimy wywiad, zarejestrujemy go w formie nagrania wideo oraz zmontujemy go w
@@ -223,7 +224,7 @@
             </aside>
         </main>
         <div id="contact" class="contact-container">
-            <img src="{{ asset('img/shape.png') }}img/shape.png" class="square" alt="" />
+            <img src="{{ asset('img/shape.png') }}" class="square" alt="" />
             <div class="form">
                 <div class="contact-info">
                     <h3 class="title">Napisz do nas lub zadzwoń!</h3>
@@ -328,12 +329,8 @@
         </div>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
-    <!-- Wrapper of the page end -->
-    <!-- include jQuery -->
     <script src="{{ asset('js/jquery.js') }}"></script>
-    <!-- include jQuery -->
     <script src="{{ asset('js/plugins.js') }}"></script>
-    <!-- include jQuery -->
     <script src="{{ asset('js/jquery.main.js') }}"></script>
     <div id="style-changer" data-src="style-changer.html"></div>
     <script src='https://www.google.com/recaptcha/api.js'></script>
