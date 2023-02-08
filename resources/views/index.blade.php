@@ -113,26 +113,27 @@
                     <div class="col-xs-12 col-sm-6 descr sameheight">
                         <div class="align">
                             <span id="black-title" class="text-bright">O NAS</span><br>
-                            <h2 style="color: #009bde;">Dostarczamy kreatywne rozwiązania dla naszych klientów w całym
-                                kraju.</h2>
-                            <p>Tworzymy i realizujemy kampanie online. Dla nas digital jest <strong>zawsze na pierwszym
-                                    miejscu</strong>. Od zawsze przyświeca nam taka idea marketingu, który buduje biznes
-                                Klienta.</p>
+                            <h2 style="color: #009bde;">{{ setting('o-nas.about_title') }}</h2>
+                            <p>{{ setting('o-nas.about_description') }}</p>
                             <ul class="facts-list">
                                 <li>
-                                    <h3><span class="counter">368</span><span class="text-block">Realizacji</span></h3>
+                                    <h3><span class="counter">{{ setting('o-nas.about_realizations') }}</span><span
+                                            class="text-block">Realizacji</span></h3>
                                 </li>
                                 <li>
-                                    <h3><span class="counter">184</span><span class="text-block">Animacji 3D</span>
+                                    <h3><span class="counter">{{ setting('o-nas.about_3d') }}</span><span
+                                            class="text-block">Animacji 3D</span>
                                     </h3>
                                 </li>
                                 <li>
-                                    <h3><span class="counter">232</span><span class="text-block">Godziny
+                                    <h3><span class="counter">{{ setting('o-nas.about_transcriptions') }}</span><span
+                                            class="text-block">Godziny
                                             transkrypcji</span>
                                     </h3>
                                 </li>
                                 <li>
-                                    <h3><span class="counter">96</span><span class="text-block">Zadowolonych
+                                    <h3><span class="counter">{{ setting('o-nas.about_clients') }}</span><span
+                                            class="text-block">Zadowolonych
                                             klientów</span></h3>
                                 </li>
 
@@ -142,7 +143,8 @@
                     <!-- Descr of the page end -->
                     <!-- img holder of the page -->
                     <div class="img-holder sameheight col-xs-12 col-sm-6">
-                        <img src="{{ asset('img/onas.png') }}" alt="o nas digitalowa" class="img-responsive">
+                        <img src="{{ asset('storage/'.setting('o-nas.about_image')) }}" alt="o nas digitalowa"
+                            class="img-responsive">
                     </div>
                     <!-- img holder of the page end -->
                 </div>
@@ -201,14 +203,17 @@
                 </div>
                 <!-- Features of the page -->
                 <ul class="features-list">
+                    @if(!empty($additional_services))
+                    @foreach($additional_services as $additional_service)
                     <li>
                         <div class="icon-holder">
-                            <img src="{{ asset('img/wywiady.png') }}" class="img-responsive">
+                            <img src="{{ asset('storage/'.$additional_service->icon) }}" class="img-responsive">
                         </div>
-                        <h3><a href="#contact">Wywiady</a></h3>
-                        <p>Przeprowadzimy wywiad, zarejestrujemy go w formie nagrania wideo oraz zmontujemy go w
-                            zależności od potrzeb.</p>
+                        <h3><a href="{{ $additional_service->link }}">{{ $additional_service->name }}</a></h3>
+                        <p>{{ $additional_service->description }}</p>
                     </li>
+                    @endforeach
+                    @endif
                 </ul>
                 <!-- Features of the page end -->
             </section>
