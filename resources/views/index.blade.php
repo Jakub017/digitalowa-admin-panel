@@ -88,11 +88,6 @@
         <main id="main">
             <!-- Hero area of the page -->
             <section class="hero-area text-center overlay" data-scroll-index="0">
-                <!-- <div id="bgvid">
-                    <video autoplay muted loop id="myVideo">
-                        <source src="{{ asset('video/polina.mp4') }}" type="video/mp4">
-                    </video>
-                </div> -->
                 <div id="polina">
                     <div class="container">
                         <div class="row">
@@ -162,14 +157,17 @@
                 </div>
                 <!-- Features of the page -->
                 <ul class="features-list">
+                    @if(!empty($services))
+                    @foreach($services as $service)
                     <li>
                         <div class="icon-holder">
-                            <img src="{{ asset('img/strony_internetowe.png') }}" class="img-responsive">
+                            <img src="{{ asset('storage/'.$service->icon) }}" class="img-responsive">
                         </div>
-                        <h3><a href="#contact">Projektowanie skutecznych stron i sklepów internetowych</a></h3>
-                        <p>Dzięki którym zdobędziesz większą liczbę klientów. Jeśli chcesz mieć przyciągającą nowych
-                            klientów stronę lub sklep internetowy, dobrze trafiłeś!</p>
+                        <h3><a href="{{ $service->link }}">{{ $service->name }}</a></h3>
+                        <p>{{ $service->description }}</p>
                     </li>
+                    @endforeach
+                    @endif
                 </ul>
                 <!-- Features of the page end -->
             </section>
