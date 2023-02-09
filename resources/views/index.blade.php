@@ -240,12 +240,14 @@
                             <p>Agencja Digitalowa.pl</p>
                         </div>
                         <div class="information">
-                            <p><img src="{{ asset('img/phone.png') }}" /> <a href="tel:666704195">(+48)
-                                    666-704-195</a></p>
+                            <p><img src="{{ asset('img/phone.png') }}" /> <a
+                                    href="tel:{{ setting('kontakt.contact_phone') }}">{{ setting('kontakt.contact_phone') }}</a>
+                            </p>
                         </div>
                         <div class="information">
                             <p> <img src="{{ asset('img/email.png') }}" /> <a
-                                    href="mailto:agencja@digitalowa.pl">agencja@digitalowa.pl</a></p>
+                                    href="mailto:{{ setting('kontakt.contact_email') }}">{{ setting('kontakt.contact_email') }}</a>
+                            </p>
                         </div>
                     </div>
 
