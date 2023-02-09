@@ -186,7 +186,7 @@ $(document).ready(function () {
                 src: '..img/polina.jpg',
                 video: {
                     src: [
-                        '../video/polina.mp4'
+                        '/public/video/polina.mp4'
                     ],
                     loop: true,
                     timer: false,

@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <style class="color_css"></style>
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-
+    {!! RecaptchaV3::initJs() !!}
 </head>
 
 <body>
@@ -265,28 +265,52 @@
                 </div>
 
                 <div id="contact-form" class="contact-form">
-                    <form action="" method="post" autocomplete="off">
+                    @if(Session::has('success'))
+                    <div class="alert alert-success">
+                        {{Session::get('success')}}
+                    </div>
+                    @endif
+                    <form method="POST" action="{{ route('contact.us.store') }}">
+                        {{ csrf_field() }}
                         <h3 class="title">Kontakt</h3>
                         <div class="input-container">
-                            <input type="text" name="name" class="input" required />
+                            <input type="text" name="name" class="input" value="{{ old('name') }}" />
                             <label for="">Imię i Nazwisko / Nazwa firmy</label>
                             <span>Imię i Nazwisko / Nazwa firmy </span>
+                            @if ($errors->has('name'))
+                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                            @endif
                         </div>
                         <div class="input-container">
-                            <input name="email" class="input" required />
+                            <input name="contact" class="input" value="{{ old('contact') }}" />
                             <label for="">Adres email / Nr telefonu</label>
                             <span>Adres email / Nr telefonu </span>
+                            @if ($errors->has('contact'))
+                            <span class="text-danger">{{ $errors->first('contact') }}</span>
+                            @endif
                         </div>
                         <div class="input-container textarea">
-                            <textarea name="message" class="input" required></textarea>
+                            <textarea name="message" class="input">{{ old('message') }}</textarea>
                             <label for="">Treść wiadomości</label>
                             <span>Treść wiadomości </span>
+                            @if ($errors->has('message'))
+                            <span class="text-danger">{{ $errors->first('message') }}</span>
+                            @endif
                         </div>
                         <div class="agree-input">
                             <input type="checkbox" name="agree" id="name" required>
                             <label for="agree">Wyrażam zgodę na przetwarzanie moich danych osobowych</label>
+
                         </div>
-                        <div class="g-recaptcha" id="rcaptcha" data-sitekey="6LejyikeAAAAALtvV5nA78zetiiO7JIsDOtWSerb">
+                        <div class="input-container{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                            <div>
+                                {!! RecaptchaV3::field('register') !!}
+                                @if ($errors->has('g-recaptcha-response'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                </span>
+                                @endif
+                            </div>
                         </div>
 
                         <input type="submit" name="submit" id="formSubmit" value="Wyślij" class="btn" />

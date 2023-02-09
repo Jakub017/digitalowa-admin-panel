@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,8 @@ use App\Http\Controllers\PagesController;
 |
 */
 
-Route::controller(PagesController::class)->group(function () {
-    Route::get('/', 'home');
-});
-
+Route::get('/', [PagesController::class, 'home']);
+Route::post('/', [ContactController::class, 'store'])->name('contact.us.store');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
