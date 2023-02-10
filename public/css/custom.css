@@ -12,7 +12,7 @@ html {
 }
 
 :root {
-  scroll-padding-top: 85px !important;
+    scroll-padding-top: 85px !important;
 }
 
 header#header.sticky {
@@ -25,7 +25,7 @@ header#header.sticky .container {
 
 a.services,
 a.contact {
-  display: inline-block;
+    display: inline-block;
     padding: 10px 20px;
     background-color: transparent;
     transition: 0.5s all;
@@ -35,7 +35,8 @@ a.contact {
     max
 }
 
-a.contact:hover, a.services:hover {
+a.contact:hover,
+a.services:hover {
     background-color: #fff;
     color: #000;
 }
@@ -550,88 +551,100 @@ footer a {
 
 
 .form {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .rc-anchor-normal {
-  max-width: 250px;
+    max-width: 250px;
 }
 
 @media (min-width: 768px) {
-  .form {
-    flex-direction: row;
-  }
+    .form {
+        flex-direction: row;
+    }
 
 }
 
 @media (max-width: 568px) {
-  #rcaptcha {
-    transform:scale(0.88) !important;
-    -webkit-transform:scale(0.88) !important;
-    transform-origin:0 0 !important;
-    -webkit-transform-origin:0 0 !important;
-  }
+    #rcaptcha {
+        transform: scale(0.88) !important;
+        -webkit-transform: scale(0.88) !important;
+        transform-origin: 0 0 !important;
+        -webkit-transform-origin: 0 0 !important;
+    }
 
 }
 
 .social-icons img {
-  max-width: 30px;
+    max-width: 30px;
 }
 
 .social-networks img {
-  max-width: 18px;
+    max-width: 18px;
 }
 
 .social-networks a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .information img {
-  max-width: 24px;
+    max-width: 24px;
 }
 
 .features-area.container {
-  padding-top: 20px;
+    padding-top: 20px;
 }
 
 #dodatkowe {
-  padding-top: 40px;
+    padding-top: 40px;
 }
 
 .features-list {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 @media (min-width: 640px) {
-  .features-list {
-    justify-content: center;
-  }
+    .features-list {
+        justify-content: center;
+    }
 }
 
 
 #black-title {
-  font-size: 30px;
-  margin-bottom: 8px;
+    font-size: 30px;
+    margin-bottom: 8px;
 }
 
 .form-message {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin-left: 0 !important;
-  border-radius: 5px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin-left: 0 !important;
+    border-radius: 5px;
 }
 
 .form-message.success {
-  background-color: #4BB543;
+    background-color: #4BB543;
 }
 
 .form-message.fail {
-  background-color: #ff0033;
+    background-color: #ff0033;
+}
+
+
+.alert.alert-success {
+    border-left: 14px solid #55b56d;
+    background-color: #d9f5e0;
+    padding: 15px;
+    color: #000;
+}
+
+.contact-form::before {
+    display: none;
 }

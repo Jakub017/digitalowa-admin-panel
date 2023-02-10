@@ -186,7 +186,7 @@ $(document).ready(function () {
                 src: '..img/polina.jpg',
                 video: {
                     src: [
-                        '/public/video/polina.mp4'
+                        'http://digitalowa.loc/video/polina.mp4'
                     ],
                     loop: true,
                     timer: false,

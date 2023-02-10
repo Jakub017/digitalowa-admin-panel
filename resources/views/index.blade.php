@@ -88,6 +88,17 @@
         <main id="main">
             <!-- Hero area of the page -->
             <section class="hero-area text-center overlay" data-scroll-index="0">
+                <div id="bgvid" style="height: 596px;" class="vegas-container">
+                    <div class="vegas-slide vegas-transition-fade vegas-transition-fade-in"
+                        style="transition: all 1000ms ease 0s;"><video preload="true" loop="" class="vegas-video"
+                            style="background-color: rgba(0, 0, 0, 0); object-position: center center; object-fit: cover; width: 100%; height: 100%;">
+                            <source src="video/polina.webm">
+                            <source src="video/polina.mp4"></video></div>
+                    <div class="vegas-timer">
+                        <div class="vegas-timer-progress" style="transition-duration: 0ms;"></div>
+                    </div>
+                    <div class="vegas-wrapper" style="overflow: visible; padding: 0px;"></div>
+                </div>
                 <div id="polina">
                     <div class="container">
                         <div class="row">
